@@ -4,6 +4,14 @@
 
 #define ______ KC_TRNS
 
+
+ // Layer shorthand
+ #define _2_shifts 0
+ #define _directional 1
+ #define _NUM 2
+ #define _SYM 3
+ #define _FUN 4
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Qwerty
@@ -79,6 +87,34 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 enum function_id {
     SHIFT_ESC,
 };
+
+void matrix_scan_user(void) {
+
+    uint8_t layer = biton32(layer_state);
+
+    switch (layer) {
+        case 0:
+            rgblight_setrgb(0,240, 255);
+            break;
+        case 1:
+            rgblight_setrgb(0,255, 100);
+            break;
+        case 2:
+            rgblight_setrgb(10,255, 0); 
+            break;
+        case 3:
+            rgblight_setrgb(255,0, 85);
+            break;
+        case 4:
+            rgblight_setrgb(240,255, 0); 
+            break;
+        default:
+            // none
+            break;
+    }   
+
+};
+
 
 const uint16_t PROGMEM fn_actions[] = {
   [0]  = ACTION_FUNCTION(SHIFT_ESC),
