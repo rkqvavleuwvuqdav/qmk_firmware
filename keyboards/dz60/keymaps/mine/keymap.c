@@ -94,13 +94,13 @@ void matrix_scan_user(void) {
 
     switch (layer) {
         case 0:
-            rgblight_setrgb(64,64,64);
+            rgblight_setrgb(80,80,0);
             break;
         case 1:
             rgblight_setrgb(0,96, 0);
             break;
         case 2:
-            rgblight_setrgb(0,0, 168);
+            rgblight_setrgb(0,0, 200);
             break;
         case 3:
             rgblight_setrgb(100,0, 100);
