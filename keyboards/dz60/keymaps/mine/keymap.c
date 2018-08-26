@@ -22,18 +22,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----------------------------------------------------------------------------------------+
  * | TG2    |  A  |  S  |  D  |  F  |  G  |  H  |  J  |  K  |  L  |  ;  |  '  |    Enter    |
  * |-----------------------------------------------------------------------------------------+
- * | Shift     |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |Bkspc|  U  | FN  |
+ * | Shift     |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  | INS |  U  | FN  |
  * |-----------------------------------------------------------------------------------------+
- * | Ctrl |  Alt  |  Cmd  |              Space                | SPC | ENT  |  L  |  D  |  R  |
+ * | Ctrl |  Alt  |  Cmd  |              Space                |     | ENT  |  L  |  D  |  R  |
  * `-----------------------------------------------------------------------------------------'
  */
 
   LAYOUT_2_shifts(
       KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, ______, KC_BSPC,
       KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
-      TG(2), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
-      KC_LSFT, ______, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_BSPC, KC_UP, MO(1),
-      KC_LCTL, KC_LALT, KC_LGUI, KC_SPC, KC_SPC, KC_SPC, KC_SPC, KC_ENT, KC_LEFT, KC_DOWN, KC_RIGHT
+      MO(2), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
+      KC_LSFT, ______, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_INS, KC_UP, MO(1),
+      KC_LCTL, KC_LALT, KC_LGUI, KC_SPC, KC_SPC, KC_SPC, ______, ______, KC_LEFT, KC_DOWN, KC_RIGHT
       ),
 
 
@@ -66,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |-----------------------------------------------------------------------------------------+
  * |        |     |     |     |     |     |     |     |PGUP |PGDWN|     |      |      |      |
  * |-----------------------------------------------------------------------------------------+
- * |         |     |  /  |  [  |  ]  |     |     |  <  | UP  | DWN |  >  |     |      |      |
+ * |         |     |  /  |  [  |  ]  |     |     |  <  | DWN | UP |  >  |     |      |      |
  * |-----------------------------------------------------------------------------------------+
  * |           |     |     |     |     |     |HOME | END |     |     |     |MSBT |     |     |
  * |-----------------------------------------------------------------------------------------+
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    LAYOUT(
        KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_INS, KC_DEL,
       ______, ______, ______, ______, ______, ______, ______, KC_PGUP, KC_PGDOWN, ______, ______, ______, ______, ______,
-      ______, ______, KC_BSLS, KC_LBRC, KC_RBRC, ______, KC_LEFT, KC_UP, KC_DOWN, KC_RIGHT, ______, ______, ______,
+      ______, ______, KC_BSLS, KC_LBRC, KC_RBRC, ______, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, ______, ______, ______,
       ______, ______, ______, ______, ______, ______, KC_HOME, KC_END, ______, ______, ______, ______, ______, ______,
       ______, ______, ______, ______, ______, ______, ______, ______, ______, ______, ______),
 
@@ -94,13 +94,13 @@ void matrix_scan_user(void) {
 
     switch (layer) {
         case 0:
-            rgblight_setrgb(128,144, 128);
+            rgblight_setrgb(64,64,64);
             break;
         case 1:
-            rgblight_setrgb(0,32, 0);
+            rgblight_setrgb(0,96, 0);
             break;
         case 2:
-            rgblight_setrgb(0,0, 64);
+            rgblight_setrgb(0,0, 168);
             break;
         case 3:
             rgblight_setrgb(100,0, 100);
