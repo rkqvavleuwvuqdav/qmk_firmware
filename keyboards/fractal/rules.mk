@@ -56,6 +56,10 @@ MIDI_ENABLE = no            # MIDI controls
 UNICODE_ENABLE = no         # Unicode
 BLUETOOTH_ENABLE = no       # Enable Bluetooth with the Adafruit EZ-Key HID
 AUDIO_ENABLE = no           # Audio output on port C6
+RGBLIGHT_ENABLE = yes
+
+EXTRAFLAGS        = -flto
+
 
 LAYOUTS = preonic_mit ortho_5x12
 LAYOUTS_HAS_RGB = no
