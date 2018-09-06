@@ -31,9 +31,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------+--------|
  * |  `     | A      | S      | D      | F      | G      | HOME   | DEL    | PG UP  | H      | J      | K      | L      | ;      | '      |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------------------------+--------|
- * | LSHIFT | Z      | X      | C      | V      | B      | END    | INS    | PG DN  | N      | M      | ,      | .      | /      | ENTER  |
+ * | LSHIFT | Z      | X      | C      | V      | B      | END    | INS    | PG DN  | N      | M      | ,      | .      | /      | RSHIFT |
  * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
- * | LCTRL  | LALT   | LGUI   | SPACE  |        | MO(FN)  | LEFT   | DOWN   | RIGHT | MO(UP) | SPACE  | SPACE  | RGUI   | RALT   | \      |
+ * | LCTRL  | LALT   | LGUI   | SPACE  |        | MO(FN)  | LEFT   | DOWN   | RIGHT | MO(UP) | SPACE  | SPACE  | INS    | \      | ENTER  |
  * '--------------------------------------------------------------------------------------------------------------------------------------'
  */
 
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   { KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, KC_BSLS, KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_PIPE  },
   { KC_GRV, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HOME, KC_DEL,  KC_PGUP, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT   },
   { KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_END,  KC_INS,   KC_PGDN, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_ENT  },
-  { KC_LCTL, KC_LALT, KC_LGUI, KC_SPC,  KC_MINS,  MO(2), KC_LEFT, KC_DOWN, KC_RGHT, MO(_UP), KC_SPC,  KC_SPC, KC_RGUI, KC_RALT, KC_BSLS  },
+  { KC_LCTL, KC_LALT, KC_LGUI, KC_SPC,  KC_MINS,  MO(2), KC_LEFT, KC_DOWN, KC_RGHT, MO(_UP), KC_SPC,  KC_SPC, KC_INS, KC_BSLS, KC_ENT  },
  },
 
 /* FUNCTION
