@@ -61,11 +61,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Me
  * ,-----------------------------------------------------------------------------------.
- * | ESC  |   F1 |   F2 |   F3 |   F4 |   F5 |   F6 |   F7 |   F8 |   F9 | F10  | DEL  |
+ * | GRV  |   F1 |   F2 |   F3 |   F4 |   F5 |   F6 |   F7 |   F8 |   F9 | F10  | DEL  |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | Tab  |   "  |   ,  |   .  |      |      |      |   [  |   ]  |   -  |  =   | PIPE |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * | GRV  |      |      |      |      |      | LEFT |   UP | DOWN | RIGHT|      |  "   |
+ * | ESC  |      |      |      |      |      | LEFT |   UP | DOWN | RIGHT|      |  "   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * | Shift|   ;  |      |      |      |      |      |   PU |  PD  |      |      |Shift |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -73,11 +73,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ME] = LAYOUT_ortho_5x12( \
-  KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL, \
+  KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL, \
   KC_TAB,  KC_QUOT, KC_COMM, KC_DOT,  KC_P,    KC_Y,    KC_F,    KC_LBRC,    KC_RBRC,    KC_R,    KC_L,    KC_PIPE,  \
-  KC_GRV,  KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_LEFT,    KC_DOWN, KC_UP, KC_RIGHT,    KC_S,    KC_QUOT, \
-  KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    KC_PGDN,    KC_PGUP,    KC_V,    KC_Z,    KC_ENT,  \
-  KC_LCTL, KC_LALT, KC_LGUI, LOWER,   TG(_LOWER), KC_SPC,  KC_SPC,  TG(_ME),   KC_LEFT, KC_DOWN, KC_UP,   KC_ENT  \
+  KC_ESC,  KC_A,    KC_O,    KC_E,    KC_U,    KC_I,    KC_LEFT,    KC_DOWN, KC_UP, KC_RIGHT,    KC_S,    KC_QUOT, \
+  KC_LSFT, KC_SCLN, KC_Q,    KC_J,    KC_K,    KC_X,    KC_B,    _______,    _______,    _______,    _______,    _______,  \
+  _______, _______, _______, _______,   _______, KC_SPC,  KC_SPC,  _______,   _______, _______, _______,   _______  \
 ),
 
 /* Lower
