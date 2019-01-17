@@ -61,5 +61,5 @@ RGBLIGHT_ENABLE = yes
 EXTRAFLAGS        = -flto
 
 
-LAYOUTS = preonic_mit ortho_5x12
+LAYOUTS = ortho_5x12 # preonic_mit
 LAYOUTS_HAS_RGB = no
