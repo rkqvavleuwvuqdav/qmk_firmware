@@ -38,7 +38,7 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 
 
 # Boot Section Size in *bytes*
-BOOTLOADER = caterina
+BOOTLOADER = atmel-dfu
 
 
 # Build Options
