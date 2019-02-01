@@ -39,6 +39,7 @@
 /* Locking resynchronize hack */
 #define LOCKING_RESYNC_ENABLE
 
+<<<<<<< HEAD
 /* key combination for command */
 #define IS_COMMAND() ( \
     keyboard_report->mods == (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT)) \
@@ -46,6 +47,8 @@
 
 #define RGB_DI_PIN C7	
 
+=======
+>>>>>>> d8e9a0f7a319e27c8dbb4e5a1131bc02b365da76
 #ifdef RGB_DI_PIN
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 1
