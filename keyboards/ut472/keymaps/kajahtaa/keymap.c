@@ -20,7 +20,6 @@
 #define RCMD_LEFT RCMD_T(KC_LEFT)
 #define RALT_DOWN RALT_T(KC_DOWN)
 #define RCTL_UP RCTL_T(KC_UP)
-#define NUM_ROW TG(1)(KC_N)
 
 
 
@@ -72,7 +71,7 @@ LAYOUT( /* Right */
    * |-------------------------------------------------------------------------+
    * |       | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 |     |
    * |-------------------------------------------------------------------------+
-   * |     |     |     |Capsl|      |          |       | Home| PgDn| PgUp| End |
+   * |     |     |     |     |      |          |       | Home| PgDn| PgUp| End |
    * `-------------------------------------------------------------------------'
    */
 
@@ -80,7 +79,7 @@ LAYOUT( /* Left */
   KC_TILDE,  KC_EXCLAIM,  KC_AT,  KC_HASH,  KC_DOLLAR, KC_PERCENT, KC_CIRCUMFLEX, KC_AMPERSAND, KC_ASTERISK, KC_LEFT_PAREN, KC_RIGHT_PAREN, KC_DELETE,
   _______, _______, _______, _______, _______, _______, _______, KC_DOWN, KC_UP, KC_LEFT_CURLY_BRACE, KC_RIGHT_CURLY_BRACE, KC_PIPE,
   _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-  _______, _______, _______, KC_CAPS, _______,     _______,      _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+  _______, _______, _______, _______, _______,     _______,      _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
   /* FN Layer 2
