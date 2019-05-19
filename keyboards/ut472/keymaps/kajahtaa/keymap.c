@@ -15,12 +15,12 @@
  */
 #include QMK_KEYBOARD_H
 
-#define LT3_TAB LT(3, KC_TAB)
 #define MT_RSFT_ENT MT(MOD_RSFT, KC_ENT)
 #define CTL_ESC MT(MOD_LCTL,KC_ESC)
 #define RCMD_LEFT RCMD_T(KC_LEFT)
 #define RALT_DOWN RALT_T(KC_DOWN)
 #define RCTL_UP RCTL_T(KC_UP)
+#define NUM_ROW TG(1)(KC_N)
 
 
 
@@ -34,12 +34,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-------------------------------------------------------------------------+
    * | Shift |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |Sh/En|
    * |-------------------------------------------------------------------------+
-   * | Ctrl| Alt | Gui | App |  L2  |   Space   |  L1  | Left| Down|  Up |Right|
+   * | Mo1 |Cntrl| Alt | GUI |  L2  |   Space   |  L1  | Left| Down|  Up |Right|
    * `-------------------------------------------------------------------------'
    */
 
 LAYOUT(
-  LT3_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
+  KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
   CTL_ESC, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_SFTENT,
   MO(1),  KC_LCTL, KC_LALT, KC_LGUI, MO(3),      KC_SPC,        MO(2),  RCMD_LEFT, RALT_DOWN, RCTL_UP,   KC_RGHT
@@ -51,17 +51,17 @@ LAYOUT(
    * |-------------------------------------------------------------------------+
    * |      |     |     |     |     |     |     |  -  |  =  |  [  |  ]  |  \   |
    * |-------------------------------------------------------------------------+
-   * |       | F11 | F12 | F13 | F14 | F15 | F16 | F17 | F18 | F19 | F20 |     |
+   * |       | F11 | F12 | F13 | F14 | F15 | F16 | F17 | F18 |  .  |     |     |
    * |-------------------------------------------------------------------------+
-   * |     |     |     |Capsl|      |          |       | Home| PgDn| PgUp| End |
+   * |     |     |     |     |      |          |       | Home| PgDn| PgUp| End |
    * `-------------------------------------------------------------------------'
    */
 
 LAYOUT( /* Right */
   KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DELETE,
-  _______, RGB_TOG, RGB_MOD, RGB_VAI, RGB_VAD, _______, _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-  _______, KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20,  _______,
-  _______, _______, _______, KC_CAPS, _______,     _______,      _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+  _______, _______, _______, _______, _______, _______, _______, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
+  _______, KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,  KC_F16,  KC_F17,  _______,  KC_DOT,  _______,  _______,
+  _______, _______, _______, _______, _______,     _______,      _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
   /* FN Layer 2
@@ -85,22 +85,49 @@ LAYOUT( /* Left */
 
   /* FN Layer 2
    * ,-------------------------------------------------------------------------.
-   * |     |     |     |     |     |     |     |  PD   |     |     |     |       |
+   * |     |     |     |     |     |     |     |  PD | PU  | INS |     |       |
    * |-------------------------------------------------------------------------+
-   * |      |     |     |     |     |     |LEFT |     |     |     |     |      |
+   * |      |     |     |     |     |     |LEFT |DOWN | UP  |     |     |      |
    * |-------------------------------------------------------------------------+
-   * |       |    |     |     |     |     |     |     |     |     |     |     |
+   * |       |    |     |     |     |     |     | END | HOME |     |     |     |
    * |-------------------------------------------------------------------------+
    * |     |     |     |     |      |          |       |MousL|MousD|MousU|MousR|
    * `-------------------------------------------------------------------------'
    */
 
 LAYOUT( /* Tab */
-  KC_ESC,  _______, _______, _______, _______, _______, KC_PGDN, KC_PGUP, KC_INSERT, _______, KC_PSCR, _______,
+  KC_ESC,  _______, _______, _______, _______, _______, _______, KC_PGDN, KC_PGUP, KC_INSERT,  KC_PSCR, _______,
   _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, _______,  KC_PIPE,
-  _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+  _______, _______, _______, _______, _______, _______, _______, KC_END, KC_HOME, _______, _______, _______,
   _______, _______, _______, RESET, _______,     _______,      _______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R
 ),
 
+
+};
+
+void matrix_scan_user(void) {
+
+    uint8_t layer = biton32(layer_state);
+
+    switch (layer) {
+        case 0:
+            rgblight_setrgb(220,160, 220);
+            break;
+        case 1:
+            rgblight_setrgb(0,250, 0);
+            break;
+        case 2:
+            rgblight_setrgb(0,16, 64);
+            break;
+        case 3:
+            rgblight_setrgb(100,0, 100);
+            break;
+        case 4:
+            rgblight_setrgb(0,250, 250);
+            break;
+        default:
+            rgblight_setrgb(128,0, 0);
+            break;
+    }
 
 };
