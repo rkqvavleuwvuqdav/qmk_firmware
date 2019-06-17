@@ -17,5 +17,6 @@
 #pragma once
 
 #include "config_common.h"
+#define TAPPING_TERM 200
 
 // place overrides here
