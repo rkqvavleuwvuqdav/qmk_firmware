@@ -47,7 +47,7 @@ F_USB = $(F_CPU)
 #   LUFA DFU     lufa-dfu
 #   QMK DFU      qmk-dfu
 #   atmega32a    bootloadHID
-BOOTLOADER = caterina
+BOOTLOADER = atmel-dfu
 
 # Interrupt driven control endpoint task(+60)
 OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
