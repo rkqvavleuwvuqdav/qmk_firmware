@@ -1,6 +1,7 @@
 # MCU name
 MCU = atmega32u4
 
+<<<<<<< HEAD
 # Processor frequency.
 #     This will define a symbol, F_CPU, in all source code files equal to the
 #     processor frequency in Hz. You can then use this symbol in your source code to
@@ -39,7 +40,17 @@ OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
 
 # Boot Section Size in *bytes*
 BOOTLOADER = atmel-dfu
-
+=======
+# Bootloader selection
+#   Teensy       halfkay
+#   Pro Micro    caterina
+#   Atmel DFU    atmel-dfu
+#   LUFA DFU     lufa-dfu
+#   QMK DFU      qmk-dfu
+#   ATmega32A    bootloadHID
+#   ATmega328P   USBasp
+BOOTLOADER = caterina
+>>>>>>> 6560dffc05131c05655f8e0d74cc65c5918894fa
 
 # Build Options
 #   change yes to no to disable
