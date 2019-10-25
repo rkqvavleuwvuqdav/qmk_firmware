@@ -7,11 +7,17 @@ MCU = atmega32u4
 #   Atmel DFU    atmel-dfu
 #   LUFA DFU     lufa-dfu
 #   QMK DFU      qmk-dfu
+<<<<<<< HEAD
 #   atmega32a    bootloadHID
 BOOTLOADER = atmel-dfu
 =======
 #   ATmega32A    bootloadHID
 #   ATmega328P   USBasp
+=======
+#   ATmega32A    bootloadHID
+#   ATmega328P   USBasp
+BOOTLOADER = caterina
+>>>>>>> e8453bbc1218a2cb40d4eac6cb543bd0c45d3de9
 
 # Build Options
 #   change to "no" to disable the options, or define them in the Makefile in
