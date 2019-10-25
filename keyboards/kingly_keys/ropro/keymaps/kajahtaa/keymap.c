@@ -107,6 +107,33 @@ KC_NLCK,      KC_TRNS,  KC_TRNS,  KC_TRNS,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_T
   )
 };
 
+void matrix_scan_user(void) {
+
+    uint8_t layer = biton32(layer_state);
+
+    switch (layer) {
+        case 0:
+            rgblight_setrgb(220,160, 220);
+            break;
+        case 1:
+            rgblight_setrgb(0,250, 0);
+            break;
+        case 2:
+            rgblight_setrgb(0,16, 64);
+            break;
+        case 3:
+            rgblight_setrgb(100,0, 100);
+            break;
+        case 4:
+            rgblight_setrgb(0,250, 250);
+            break;
+        default:
+            rgblight_setrgb(128,0, 0);
+            break;
+    }
+
+};
+
 void encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         if (clockwise) {
